@@ -96,9 +96,15 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+function getPasswordOptions() {
   var length = parseInt(
-    prompt('How many characters do you want your password to contain?')
+    prompt('How many characters would you like your password to contain?')
   );
+  
+  if (isNaN(length) === true) {
+    alert('Password length must be provided as a number');
+    return;
+  }
 
   if (length < 8) {
     alert('Password must be at least 8 characters');
